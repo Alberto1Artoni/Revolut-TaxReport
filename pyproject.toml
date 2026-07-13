@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foglio-calcoli"
+version = "0.1.0"
+description = "Revolut export → Italian Dichiarazione dei Redditi 'Foglio Calcoli' (foreign accounts)"
+readme = "README.md"
+requires-python = ">=3.11"          # stdlib tomllib
+license = { text = "MIT" }
+dependencies = []                    # compute core is pure stdlib
+
+[project.scripts]
+foglio-calcoli = "foglio_calcoli.cli:main"
+
+[project.optional-dependencies]
+# `pip install -e ".[viz]"` — only needed for the pandas/Jupyter notebook in viz/
+viz = ["pandas>=2.0", "jupyter", "nbconvert", "nbformat", "ipykernel"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

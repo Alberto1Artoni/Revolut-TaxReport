@@ -1,0 +1,7 @@
+
+[viz]
+pandas>=2.0
+jupyter
+nbconvert
+nbformat
+ipykernel

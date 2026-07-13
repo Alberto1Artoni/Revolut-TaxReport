@@ -1,0 +1,56 @@
+# Foglio Calcoli — case: anonymous_2025 (synthetic anonymised case)
+#
+# Derived from an anonymised Revolut export with slightly altered dividend figures.
+# It contains no real holder data; expected values below are the tool's own output on
+# these inputs, so `python main.py --test` acts as a self-consistency regression check.
+
+fiscal_year = 2025
+input_dir = "input"
+ref_dir = "../../data"         # shared rates + AdE codes
+minus_carryforward = "0"
+
+[broker]
+code = "RVLT-LT-UK"
+country = "Lituania"
+country_code = "259"
+
+[[holders]]
+name = "MarioRossi"
+share = "1.0"
+
+[fund_overrides]
+
+# ------------------------------------------------------------------------------------------
+# Validation: regression values captured from this tool's own run on the inputs above
+# (synthetic, not from an external reference). `python main.py --test` re-checks them.
+# ------------------------------------------------------------------------------------------
+[test]
+enabled = true
+source = "synthetic (self-consistency check)"
+tolerance = "0.01"
+
+[test.expected]
+"RM/M H-050"        = "8.7"
+"RM/M H-069"        = "23.4696"
+"RM/M B-040"        = "53.4262"
+"RT corrispettivi"  = "4595.2364"
+"RT costi"          = "3930.7997"
+"RT plus"           = "664.4366"
+"RW Azioni VI"      = "7551.7345"
+"RW Azioni VF"      = "8214.585"
+"RW Azioni VIvafe"  = "658557.3011"
+"RW Azioni giorni"  = "80.1692"
+"RW Azioni IVAFE"   = 4
+"RW ETF VI"         = "500.0198"
+"RW ETF VF"         = "553.4461"
+"RW ETF VIvafe"     = "117330.5766"
+"RW ETF giorni"     = "212"
+"RW ETF IVAFE"      = 1
+"RW Liq EUR VI"     = "1555.1361"
+"RW Liq EUR VF"     = "1555.1361"
+"RW Liq EUR VIvafe" = "42308.6485"
+"RW Liq EUR giorni" = "27.2057"
+"RW Liq USD VI"     = "3704.8311"
+"RW Liq USD VF"     = "3707.386"
+"RW Liq USD VIvafe" = "14616.0763"
+"RW Liq USD giorni" = "3.9424"

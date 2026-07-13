@@ -1,0 +1,6 @@
+Income from Sells
+Date acquired,Date sold,Symbol,Security name,ISIN,Country,Quantity,Cost basis,Gross proceeds,Gross PnL,Currency
+2024-06-01,2025-07-01,TESTF,Test Fund UCITS ETF,IE00TESTFUND0,EU,10,1000.00,900.00,-100.00,EUR
+
+Other income & fees
+Date,Symbol,Security name,ISIN,Country,Gross amount,Withholding tax,Net Amount,Currency

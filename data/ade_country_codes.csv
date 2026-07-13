@@ -1,0 +1,273 @@
+ade_code,iso2,name_it
+002,AF,Afghanistan
+003,DZ,Algeria
+004,AD,Andorra
+005,SA,Arabia Saudita
+006,AR,Argentina
+007,AU,Australia
+008,AT,Austria
+009,BE,Belgio
+010,BO,Bolivia
+011,BR,Brasile
+012,BG,Bulgaria
+013,CA,Canada
+015,CL,Cile
+016,CN,Cina
+017,CO,Colombia
+018,CD,Congo (Rep. Democratica del)
+019,CR,Costa Rica
+020,CU,Cuba
+021,DK,Danimarca
+022,TW,Taiwan
+023,EG,Egitto
+024,EC,Ecuador
+025,BI,Burundi
+026,ET,Etiopia
+027,PH,Filippine
+028,FI,Finlandia
+029,FR,Francia
+031,GB,Regno Unito
+032,GR,Grecia
+033,GT,Guatemala
+034,HT,Haiti
+035,HN,Honduras
+036,PK,Pakistan
+037,SM,San Marino
+038,IQ,Iraq
+039,IR,Iran
+040,IE,Irlanda
+041,IS,Islanda
+042,YE,Yemen
+044,LR,Liberia
+045,LY,Libia
+046,MX,Messico
+047,NI,Nicaragua
+048,NO,Norvegia
+049,NZ,Nuova Zelanda
+050,NL,Paesi Bassi
+051,PA,Panama
+052,PY,Paraguay
+053,PE,Perù
+054,PL,Polonia
+055,PT,Portogallo
+056,MW,Malawi
+057,TZ,Tanzania
+058,ZM,Zambia
+059,MO,Macao
+061,RO,Romania
+062,VN,Vietnam
+063,DO,Dominicana (Repubblica)
+064,SV,El Salvador
+065,SY,Siria
+066,SO,Somalia
+067,ES,Spagna
+068,SE,Svezia
+069,US,Stati Uniti d'America
+070,SD,Sudan
+071,CH,Svizzera
+072,TH,Thailandia
+073,ZW,Zimbabwe
+074,KP,Corea del Nord (Rep. Pop. Democratica)
+075,TN,Tunisia
+076,TR,Turchia
+077,HU,Ungheria
+078,ZA,Repubblica Sudafricana
+080,UY,Uruguay
+081,VE,Venezuela
+082,JM,Giamaica
+083,MM,Myanmar (Birmania)
+084,KR,Corea del Sud (Repubblica di)
+085,LK,Sri Lanka
+087,AL,Albania
+088,JP,Giappone
+089,LS,Lesotho
+090,LI,Liechtenstein
+091,MC,Principato di Monaco
+092,LU,Lussemburgo
+093,VA,Santa Sede (Città del Vaticano)
+094,DE,Germania
+095,LB,Libano
+097,BT,Bhutan
+098,BW,Botswana
+100,,Canarie (Isole)
+101,CY,Cipro
+102,GI,Gibilterra
+103,HK,Hong Kong
+104,MG,Madagascar
+105,MT,Malta
+106,MY,Malaysia
+107,MA,Marocco
+109,NR,Nauru
+110,MN,Mongolia
+112,GH,Ghana
+113,DJ,Gibuti
+114,IN,India
+115,NP,Nepal
+116,KE,Kenya
+117,NG,Nigeria
+118,BB,Barbados
+119,CM,Camerun
+120,TT,Trinidad e Tobago
+121,VU,Vanuatu
+122,JO,Giordania
+123,GF,Guyana Francese
+124,SR,Surinam
+125,BN,Brunei Darussalam
+126,KW,Kuwait
+127,MV,Maldive
+128,MU,Maurizio (Isola)
+129,ID,Indonesia
+130,BD,Bangladesh
+131,WS,Samoa Occidentali
+132,UG,Uganda
+133,AO,Angola
+134,MZ,Mozambico
+135,KH,Cambogia
+136,LA,Laos (Rep. Democratica Popolare)
+137,GN,Guinea
+138,SZ,Swaziland (Eswatini)
+139,,Campione d'Italia
+141,MR,Mauritania
+142,BF,Burkina Faso
+143,CF,Centroafricana (Repubblica)
+144,TD,Ciad
+145,CG,Congo (Rep. del)
+146,CI,Costa d'Avorio
+147,SG,Singapore
+148,AS,Samoa Americane (Isole)
+149,ML,Mali
+150,NE,Niger
+151,RW,Ruanda
+152,SN,Senegal
+153,SL,Sierra Leone
+154,GU,Guam (Isola di)
+155,TG,Togo
+156,GD,Grenada
+157,GA,Gabon
+158,BJ,Benin
+159,GY,Guyana
+160,BS,Bahamas
+161,FJ,Figi
+162,TO,Tonga
+163,OM,Oman
+164,GM,Gambia
+166,EH,Sahara Occidentale
+167,GQ,Guinea Equatoriale
+168,QA,Qatar
+169,BH,Bahrain
+175,PN,Pitcairn
+176,KM,Comore
+177,,Midway (Isole)
+178,,Wake (Isole)
+180,,Territorio Antartico Britannico
+182,IL,Israele
+183,TF,Territori Australi e Antartici Francesi
+185,GW,Guinea Bissau
+186,PG,Papua Nuova Guinea
+187,ST,Sao Tomé e Principe
+188,CV,Capo Verde
+189,SC,Seychelles
+190,FK,Falkland (Isole)
+191,SB,Isole Salomone
+192,DM,Dominica
+193,TV,Tuvalu
+194,KI,Kiribati
+195,KN,Saint Kitts e Nevis
+196,VC,Saint Vincent e Grenadine
+197,AG,Antigua e Barbuda
+198,BZ,Belize
+199,LC,Santa Lucia
+200,GL,Groenlandia
+201,GG,Guernsey (Isole del Canale)
+202,JE,Jersey (Isole del Canale)
+203,IM,Man (Isola di)
+204,FO,Faeroer (Isole)
+205,NU,Niue
+206,NA,Namibia
+207,BM,Bermuda
+208,MS,Montserrat
+209,AI,Anguilla
+210,TC,Turks e Caicos (Isole)
+211,KY,Cayman (Isole)
+212,AW,Aruba
+213,MQ,Martinica
+214,GP,Guadalupa
+215,FM,Micronesia (Stati Federati di)
+216,PW,Palau
+217,MH,Marshall (Isole)
+218,WF,Wallis e Futuna
+219,MP,Marianne Settentrionali (Isole)
+220,PR,Portorico
+221,VI,Vergini Americane (Isole)
+222,MF,Saint Martin (parte settentrionale)
+223,,Clipperton
+225,PF,Polinesia Francese
+226,YT,Mayotte
+227,,Ascension
+228,,Gough
+229,,Tristan da Cunha
+230,,Chafarinas
+231,,Melilla
+232,,Peñón de Alhucemas
+233,,Peñón de Vélez de la Gomera
+234,,Azzorre (Isole)
+235,,Madeira
+236,TK,Tokelau
+237,CK,Cook (Isole)
+238,,Abu Dhabi
+239,,Ajman
+240,,Dubai
+241,,Fujayrah
+242,,Ras el Khaimah
+243,,Sharjah
+244,,Umm al Qaiwain
+245,IO,Territorio Britannico dell'Oceano Indiano
+246,,Ceuta
+247,RE,Riunione
+248,PM,Saint-Pierre e Miquelon
+249,VG,Vergini Britanniche (Isole)
+250,,Panama - Zona del Canale
+251,AN,Antille Olandesi
+252,UM,Isole Minori Americane del Pacifico
+253,NC,Nuova Caledonia
+254,SH,Sant'Elena
+255,,Chagos (Isole)
+256,,Caroline (Isole)
+257,EE,Estonia
+258,LV,Lettonia
+259,LT,Lituania
+260,SI,Slovenia
+261,HR,Croazia
+262,RU,Russia (Federazione di)
+263,UA,Ucraina
+264,BY,Bielorussia
+265,MD,Moldova
+266,AM,Armenia
+267,GE,Georgia
+268,AZ,Azerbaigian
+269,KZ,Kazakistan
+270,KG,Kirghizistan
+271,UZ,Uzbekistan
+272,TJ,Tagikistan
+273,TM,Turkmenistan
+274,BA,Bosnia-Erzegovina
+275,CZ,Repubblica Ceca
+276,SK,Slovacchia
+277,ER,Eritrea
+278,MK,Macedonia del Nord
+279,PS,Cisgiordania/Striscia di Gaza
+280,BV,Bouvet (Isola)
+281,CC,Cocos (Keeling) (Isole)
+282,CX,Christmas (Isola)
+283,GS,Georgia del Sud e Sandwich del Sud
+284,HM,Heard e McDonald (Isole)
+285,NF,Norfolk (Isola)
+286,SJ,Svalbard e Jan Mayen (Isole)
+287,TL,Timor Est
+288,,Serbia e Montenegro
+794,,Alderney (Isole del Canale)
+795,,Barbuda
+796,AE,Emirati Arabi Uniti
+797,,Herm (Isole del Canale)
+798,,Sark (Isole del Canale)
+799,,Paesi non classificati

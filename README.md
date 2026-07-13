@@ -1,0 +1,79 @@
+# Revolut Tax Report
+
+Generates the **"Foglio Calcoli"** (calculation worksheet) for the Italian *Dichiarazione dei
+Redditi* on foreign brokerage accounts, from a **Revolut** export.
+
+Chapters produced:
+- **Quadro RM/M** — foreign dividends (code H) + UCITS-fund gains (code B), 26%.
+- **Quadro RT/T** — capital gains (stocks LIFO, fund losses PMC), 26%.
+- **Quadro RW/W** — monitoring + IVAFE (0.2%): financial instruments + liquidity.
+- **Extra** — PMC (weighted-average cost) history for funds.
+
+## Layout
+```
+pyproject.toml               # packaging (installable; console script `foglio-calcoli`)
+main.py                      # thin entry-point shim over foglio_calcoli.cli
+src/foglio_calcoli/          # the library core
+data/                         # shared data: BdI rates + fetch script + AdE country codes
+cases/
+  anonymous_2025/            # synthetic validation case (config.toml + input/)
+  synthetic_carryover/       # synthetic case: prior-year holdings + opening cash + fund loss
+  <name>/output/             # GENERATED per run: <name>.log + report.txt + summary_*.csv
+viz/                         # Foglio_Calcoli.ipynb + build_notebook.py (pandas view)
+output/                      # tuttoinregola.net reference PDFs
+```
+
+## Run
+
+```
+# compute a case (text report) — run from the repo root
+python3 main.py --config cases/anonymous_2025/config.toml
+python3 main.py --config cases/anonymous_2025/config.toml --format json --out report.json
+
+# run the validation suite (all cases with a [test] block); exits non-zero on failure
+python3 main.py --test
+python3 main.py --test --config cases/anonymous_2025/config.toml   # a single case
+```
+
+### Outputs & logs
+Every `--config` / `--test` run writes artifacts into **`cases/<name>/output/`**:
+- **`<name>.log`** — timestamped run log (parsing, rate provisioning, per-quadro totals, warnings,
+  and — for `--test` — each validation check). Add `-v`/`--verbose` to also echo it to the console.
+- **`report.txt`** — the full text report; **`summary_*.csv`** — one summary table per quadro
+  (RM dividendi/fondi, RT, RW strumenti, RW liquidità); **`metrics.csv`** — all named metrics.
+
+## How to use the library
+1. Copy a case folder: `cp -r cases/anonymous_2025 cases/<name>` (or start from the root `config.toml`).
+2. Replace `cases/<name>/input/` with your two Revolut CSVs (account statement + P&L statement).
+3. Edit `cases/<name>/config.toml` (broker, holder + `share`, `fiscal_year`; keep `ref_dir = "../../data"`).
+   Remove the `[test]` block unless you have expected values to check against.
+4. `python3 main.py --config cases/me/config.toml`.
+
+Missing BdI exchange rates for your year/currencies are fetched automatically (needs network once,
+then cached in `data/`); set `allow_fetch = false` to require them pre-cached instead.
+
+### Positions/cash carried from a prior year
+A single-year Revolut export omits holdings/cash you had before 01/01. If so, add
+`cases/<name>/input/opening_positions.csv` (`ticker,qty,pmc_eur,open_date,currency,is_fund`) and
+`opening_cash.csv` (`currency,balance`), or an `[opening]` block in the config (see
+`cases/synthetic_carryover/`). The tool warns when the first transaction is after 01/01 and no
+opening balances were given.
+
+## Configuration & reference data
+- **`config.toml`** (stdlib `tomllib`): broker, `[[holders]]` + `share`, `fiscal_year`,
+  `input_dir`/`ref_dir`, `minus_carryforward`, `allow_fetch`, `[fund_overrides]`,
+  `[isin_country_overrides]` / `[country_ade_overrides]`, optional `[opening]`, and the optional
+  `[test]` / `[test.expected]` block used by `--test`.
+- **`data/ade_country_codes.csv`** — official AdE *Elenco codici Stati esteri* (`ade_code,iso2,name_it`);
+  ISIN prefixes map to codes via the ISO alpha-2 column.
+- **`data/bdi_*_eur.csv`** — Banca d'Italia rates (daily for RM/RT, monthly for RW). Refresh/extend:
+  `python3 data/fetch_bdi_rates.py 2025 USD GBP …`. See `data/README.md`.
+
+## Notes / assumptions
+- **Revolut format only.** Other holders/years/currencies/holdings work; other brokers do not.
+- Positions open at 31/12 are valued at **cost basis** (as the reference does), not market price;
+  positions carried from a prior year are valued as-of 01/01 at their carried EUR cost.
+- Foreign dividends are declared **gross** of foreign withholding.
+- Liquidity is treated as *deposito infruttifero* → IVAFE 0 (solo monitoraggio).
+- Buy-only tickers lack ISIN/name in the export, so are classified as stocks (matches the
+  reference, e.g. VWCE under "Azioni").

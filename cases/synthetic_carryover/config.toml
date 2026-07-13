@@ -1,0 +1,53 @@
+# Foglio Calcoli — synthetic case exercising prior-year carried positions, opening cash,
+# and a UCITS fund sold at a loss (RT-via-PMC). Hand-built, not a real taxpayer.
+
+fiscal_year = 2025
+input_dir = "input"
+ref_dir = "../../data"
+minus_carryforward = "0"
+
+[broker]
+code = "SYNTH-TEST"
+country = "Lituania"
+country_code = "259"
+
+[[holders]]
+name = "Synthetic"
+share = "1.0"
+
+[fund_overrides]
+
+# ------------------------------------------------------------------------------------------
+# Validation. Key anchors hand-verified: TESTF (carried UCITS fund sold at loss) -> RT
+# minus 100, RW ETF VI 1000/VF 900/giorni 182; TESTS (carried stock still open) contributes
+# 100*3 = 300 held for 365 days (VIvafe 109500) inside Azioni. Remaining values frozen from
+# the engine to guard the prior-year / opening-cash code paths against regressions.
+# ------------------------------------------------------------------------------------------
+[test]
+enabled = true
+note = "synthetic regression fixture for prior-year carried positions + opening cash + fund loss"
+
+[test.expected]
+"RT corrispettivi"  = "900"
+"RT costi"          = "1000"
+"RT plus"           = "0"
+"RT minus"          = "100"
+"RW Azioni VI"      = "438.7989"
+"RW Azioni VF"      = "438.7989"
+"RW Azioni VIvafe"  = "149751.6887"
+"RW Azioni giorni"  = "341.2763"
+"RW Azioni IVAFE"   = 1
+"RW ETF VI"         = "1000"
+"RW ETF VF"         = "900"
+"RW ETF VIvafe"     = "163800"
+"RW ETF giorni"     = "182"
+"RW ETF IVAFE"      = 1
+"RW Liq EUR VI"     = "2900"
+"RW Liq EUR VF"     = "2900"
+"RW Liq EUR VIvafe" = "530600"
+"RW Liq EUR giorni" = "182.9655"
+"RW Liq USD VI"     = "806.7693"
+"RW Liq USD VF"     = "761.5784"
+"RW Liq USD VIvafe" = "121385.1872"
+"RW Liq USD giorni" = "159.3863"
+

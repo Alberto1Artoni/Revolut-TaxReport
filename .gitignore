@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# generated per-case artifacts (run log, summary tables, report)
+cases/*/output/
+
+# personal-data cases: kept locally, never published to GitHub
+cases/alberto_2025/
+cases/emanuela_2025/

@@ -1,0 +1,2 @@
+[console_scripts]
+foglio-calcoli = foglio_calcoli.cli:main
